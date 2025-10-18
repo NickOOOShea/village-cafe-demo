@@ -7,6 +7,11 @@ const nextConfig = {
     remotePatterns: [],
   },
   trailingSlash: true,
+  // Disable webpack cache for Cloudflare Pages (25 MiB file size limit)
+  webpack: (config, { isServer }) => {
+    config.cache = false
+    return config
+  },
 }
 
 module.exports = nextConfig
