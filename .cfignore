@@ -1,0 +1,6 @@
+# Cloudflare Pages ignore file
+# Exclude cache and build artifacts that aren't needed for deployment
+
+.next/cache
+node_modules
+.git
