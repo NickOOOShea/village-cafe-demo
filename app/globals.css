@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --foreground-rgb: 42, 33, 23;  /* coffee-900 */
+    --background-start-rgb: 254, 253, 251;  /* cream-50 */
+    --background-end-rgb: 249, 245, 233;  /* cream-200 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cafe-gradient text-coffee-900;
+    font-family: 'Open Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', Georgia, serif;
+    @apply text-coffee-900;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply bg-sage-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-sage-700 transition-all duration-300 shadow-sage hover:shadow-2xl hover:scale-105 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-terracotta-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-terracotta-600 transition-all duration-300 shadow-terracotta hover:shadow-2xl hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply border-2 border-sage-500 text-sage-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-sage-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-sage hover:scale-105 active:scale-95;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl shadow-xl p-8 border border-sage-100 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 hover:border-sage-300;
+  }
+
+  .card-feature {
+    @apply bg-gradient-to-br from-white to-cream-100 rounded-2xl p-8 shadow-warm border border-cream-200 hover:shadow-2xl hover:scale-105 hover:-translate-y-2 transition-all duration-300;
+  }
+
+  .card-special {
+    @apply bg-white rounded-2xl p-6 shadow-warm border-2 border-cream-200 hover:border-terracotta-300 hover:shadow-glow-terracotta transition-all duration-300;
+  }
+
+  .card-menu {
+    @apply bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-sage-100 hover:bg-white hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Text styles */
+  .text-gradient-sage {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-sage-600 via-sage-500 to-sage-400;
+  }
+
+  .text-gradient-warm {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-terracotta-500 via-coffee-500 to-sage-600;
+  }
+
+  .text-gradient-terracotta {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-terracotta-600 to-terracotta-400;
+  }
+
+  /* Hero pattern */
+  .cafe-pattern {
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(107, 122, 90, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(212, 96, 65, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(223, 214, 190, 0.1) 0%, transparent 50%);
+  }
+
+  /* Section styles */
+  .section-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 text-coffee-900;
+  }
+
+  .section-subheading {
+    @apply text-xl md:text-2xl text-coffee-600 max-w-3xl mx-auto mb-16 leading-relaxed;
+  }
+
+  /* Form elements */
+  .input-field {
+    @apply w-full px-6 py-4 border-2 border-sage-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-all duration-200 bg-white;
+  }
+
+  .textarea-field {
+    @apply w-full px-6 py-4 border-2 border-sage-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent transition-all duration-200 min-h-[150px] resize-y bg-white;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full bg-sage-100 text-sage-700 font-semibold text-sm;
+  }
+
+  .badge-dietary {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-vegetarian {
+    @apply bg-sage-100 text-sage-700;
+  }
+
+  .badge-vegan {
+    @apply bg-emerald-100 text-emerald-700;
+  }
+
+  .badge-gluten-free {
+    @apply bg-amber-100 text-amber-700;
+  }
+
+  /* Menu category tabs */
+  .menu-tab {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 border-2;
+  }
+
+  .menu-tab-active {
+    @apply bg-sage-600 text-white border-sage-600 shadow-sage;
+  }
+
+  .menu-tab-inactive {
+    @apply bg-white text-sage-700 border-sage-200 hover:border-sage-400 hover:bg-sage-50;
+  }
+
+  /* Divider */
+  .divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-sage-300 to-transparent my-12;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-700 { animation-delay: 700ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
+
+  /* Text shadows */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .text-shadow-xl {
+    text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-shadow-warm {
+    text-shadow: 2px 2px 8px rgba(139, 111, 71, 0.2);
+  }
+
+  /* Backdrop blur */
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* Custom scrollbar - warm cafe theme */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f5e9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6b7a5a 0%, #566249 100%);
+  border-radius: 7px;
+  border: 2px solid #f9f5e9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #566249 0%, #424c39 100%);
+}
+
+/* Selection colors - sage theme */
+::selection {
+  background: #6b7a5a;
+  color: white;
+}
+
+::-moz-selection {
+  background: #6b7a5a;
+  color: white;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, textarea, select {
+  @apply transition-all duration-200;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-sage-500;
+}
+
+/* Floating blob animations for cafe warmth */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(30px, -30px) rotate(3deg);
+  }
+  66% {
+    transform: translate(-20px, 20px) rotate(-3deg);
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 12s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+/* Steam animation for coffee cups */
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) scaleX(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-40px) scaleX(0.8);
+    opacity: 0;
+  }
+}
+
+.animate-steam {
+  animation: steam 3s ease-in-out infinite;
+}

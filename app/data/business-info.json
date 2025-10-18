@@ -1,0 +1,49 @@
+{
+  "name": "Village Cafe",
+  "tagline": "Artisan Coffee & Homemade Goodness Since 2015",
+  "description": "A cozy neighborhood cafe serving specialty coffee, fresh pastries, and wholesome meals made with locally-sourced ingredients.",
+  "address": {
+    "street": "47 Bridge Street",
+    "town": "Westport",
+    "county": "Co. Mayo",
+    "eircode": "F28 XT98"
+  },
+  "contact": {
+    "phone": "+353 98 28765",
+    "email": "hello@villagecafe.ie",
+    "facebook": "https://facebook.com/villagecafewestport",
+    "instagram": "@villagecafe"
+  },
+  "openingHours": {
+    "monday": { "open": "08:00", "close": "17:00" },
+    "tuesday": { "open": "08:00", "close": "17:00" },
+    "wednesday": { "open": "08:00", "close": "17:00" },
+    "thursday": { "open": "08:00", "close": "17:00" },
+    "friday": { "open": "08:00", "close": "18:00" },
+    "saturday": { "open": "09:00", "close": "18:00" },
+    "sunday": { "open": "10:00", "close": "17:00" }
+  },
+  "coordinates": {
+    "lat": 53.7998,
+    "lng": -9.5196
+  },
+  "features": [
+    "Specialty Coffee",
+    "Homemade Pastries",
+    "Locally Sourced",
+    "Vegetarian & Vegan Options",
+    "Free WiFi",
+    "Outdoor Seating"
+  ],
+  "established": 2015,
+  "story": {
+    "title": "Our Story",
+    "paragraphs": [
+      "Village Cafe opened its doors in 2015 with a simple mission: to create a warm, welcoming space where the community could gather over exceptional coffee and wholesome food.",
+      "What started as a small passion project has blossomed into Westport's favorite neighborhood cafe. We're proud to source our ingredients from local farmers and producers, supporting our community while serving you the freshest, most flavorful food possible.",
+      "Whether you're here for your morning coffee, a leisurely brunch, or an afternoon treat, we're committed to making every visit special. Thank you for being part of our story."
+    ],
+    "owner": "Sarah & Tom Murphy",
+    "ownerTitle": "Owners & Head Baristas"
+  }
+}
