@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="bg-coffee-800 text-cream-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -79,6 +79,27 @@ export default function Footer() {
                 </a>
               </p>
             </address>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-lg font-display font-semibold text-white mb-4">
+              Legal
+            </h4>
+            <div className="space-y-2 text-sm">
+              <a
+                href="/privacy"
+                className="block text-cream-300 hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="/terms"
+                className="block text-cream-300 hover:text-white transition-colors"
+              >
+                Terms of Service
+              </a>
+            </div>
           </div>
 
           {/* Social & Features */}
