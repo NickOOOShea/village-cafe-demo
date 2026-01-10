@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Heart, Users, Sprout, Award } from 'lucide-react'
+import Image from 'next/image'
 import businessInfo from '@/app/data/business-info.json'
 
 export default function OurStory() {
@@ -97,23 +98,21 @@ export default function OurStory() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="relative"
           >
-            {/* Placeholder for cafe photo */}
-            <div className="relative aspect-[4/5] bg-gradient-to-br from-warm-white-200 to-sage-200 rounded-3xl overflow-hidden shadow-lifted">
-              {/* Image placeholder with decorative elements */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Heart className="w-20 h-20 text-sage-400 mx-auto mb-4" />
-                  <p className="text-2xl font-display text-coffee-700">
-                    Cafe Interior Photo
-                  </p>
-                  <p className="text-coffee-500 mt-2">
-                    Warm, welcoming atmosphere
-                  </p>
-                </div>
-              </div>
-
+            {/* Cafe Interior Photo */}
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lifted">
+              <Image
+                src="/images/atmosphere/cafe-interior.jpg"
+                alt="Village Cafe interior with warm, welcoming atmosphere"
+                fill
+                className="object-cover"
+              />
               {/* Decorative overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-coffee-900/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-coffee-900/30 to-transparent" />
+              {/* Caption overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <p className="text-lg font-display">Cafe Interior Photo</p>
+                <p className="text-sm opacity-80">Warm, welcoming atmosphere</p>
+              </div>
             </div>
 
             {/* Accent decoration */}
