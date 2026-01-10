@@ -3,6 +3,7 @@ import { DM_Serif_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import DemoAdminButton from '@/components/DemoAdminButton'
 import businessInfo from './data/business-info.json'
 
 const dmSerifDisplay = DM_Serif_Display({
@@ -95,6 +96,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <DemoAdminButton />
       </body>
     </html>
   )
