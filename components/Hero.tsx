@@ -30,24 +30,24 @@ export default function Hero() {
           className="absolute top-20 -right-20 w-96 h-96 bg-gradient-to-br from-sage-200/40 to-sage-300/20 rounded-full blur-3xl animate-float-gentle"
         />
 
-        {/* Terracotta accent blob */}
+        {/* Butter yellow accent blob */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="absolute bottom-40 -left-20 w-80 h-80 bg-gradient-to-br from-terracotta-200/30 to-cream-300/20 rounded-full blur-3xl animate-float-gentle animation-delay-4000"
+          className="absolute bottom-40 -left-20 w-80 h-80 bg-gradient-to-br from-butter-200/40 to-butter-300/20 rounded-full blur-3xl animate-float-gentle animation-delay-4000"
         />
 
-        {/* Small cream accent */}
+        {/* Small warm accent */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-cream-300/20 to-sage-200/10 rounded-full blur-2xl animate-float-gentle animation-delay-6000"
+          className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-warm-white-200/30 to-sage-200/10 rounded-full blur-2xl animate-float-gentle animation-delay-6000"
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative section-container py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Text content */}
           <motion.div
@@ -61,9 +61,9 @@ export default function Hero() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="inline-flex items-center gap-2 mb-6"
+              className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-sage-200 shadow-warm"
             >
-              <div className={`w-3 h-3 rounded-full ${isOpen ? 'bg-green-500 animate-pulse' : 'bg-gray-400'}`} />
+              <div className={`w-2.5 h-2.5 rounded-full ${isOpen ? 'bg-sage-500 animate-pulse' : 'bg-coffee-400'}`} />
               <span className="text-sm font-semibold text-coffee-700">
                 {isOpen ? 'Open Now' : 'Currently Closed'} · {formatTime(todayHours.open)} - {formatTime(todayHours.close)}
               </span>
@@ -74,7 +74,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-display mb-6 leading-tight"
             >
               <span className="text-gradient-warm text-shadow-warm">
                 {businessInfo.name}
@@ -86,7 +86,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="text-xl md:text-2xl text-coffee-600 mb-4 font-medium"
+              className="text-xl md:text-2xl text-coffee-700 mb-4 font-medium"
             >
               {businessInfo.tagline}
             </motion.p>
@@ -96,7 +96,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-lg text-coffee-500 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg text-coffee-600 mb-8 max-w-2xl mx-auto lg:mx-0"
             >
               {businessInfo.description}
             </motion.p>
@@ -108,7 +108,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8"
             >
-              {businessInfo.features.slice(0, 3).map((feature, index) => (
+              {businessInfo.features.slice(0, 3).map((feature) => (
                 <span
                   key={feature}
                   className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold text-sage-700 border border-sage-200 shadow-warm"
@@ -130,13 +130,13 @@ export default function Hero() {
                 className="btn-secondary group"
               >
                 View Menu
-                <Coffee className="inline-block ml-2 w-5 h-5 group-hover:rotate-12 transition-transform" />
+                <Coffee className="w-5 h-5 group-hover:rotate-12 transition-transform" />
               </a>
               <a
                 href={`tel:${businessInfo.contact.phone}`}
                 className="btn-outline group"
               >
-                <Phone className="inline-block mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 Call to Reserve
               </a>
             </motion.div>
@@ -151,54 +151,54 @@ export default function Hero() {
           >
             <div className="relative">
               {/* Main card with coffee cup illustration */}
-              <div className="relative bg-gradient-to-br from-white to-cream-100 rounded-3xl p-12 shadow-2xl border-2 border-sage-100">
-                {/* Coffee cup illustration placeholder - using decorative elements */}
+              <div className="relative bg-gradient-to-br from-white to-warm-white-100 rounded-3xl p-12 shadow-lifted border-2 border-sage-100">
+                {/* Coffee cup illustration placeholder */}
                 <div className="flex items-center justify-center mb-8">
                   <div className="relative">
-                    <div className="w-48 h-48 bg-gradient-to-br from-coffee-400 to-coffee-600 rounded-full flex items-center justify-center shadow-2xl">
-                      <Coffee className="w-24 h-24 text-cream-50" strokeWidth={1.5} />
+                    <div className="w-48 h-48 bg-gradient-to-br from-espresso-800 to-espresso-900 rounded-full flex items-center justify-center shadow-2xl">
+                      <Coffee className="w-24 h-24 text-warm-white-50" strokeWidth={1.5} />
                     </div>
                     {/* Steam effect */}
                     <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                      <div className="w-2 h-8 bg-gradient-to-t from-coffee-300/40 to-transparent rounded-full animate-steam" />
+                      <div className="w-2 h-8 bg-gradient-to-t from-espresso-300/40 to-transparent rounded-full animate-steam" />
                     </div>
                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 ml-4">
-                      <div className="w-2 h-8 bg-gradient-to-t from-coffee-300/40 to-transparent rounded-full animate-steam animation-delay-500" />
+                      <div className="w-2 h-8 bg-gradient-to-t from-espresso-300/40 to-transparent rounded-full animate-steam animation-delay-500" />
                     </div>
                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 -ml-4">
-                      <div className="w-2 h-8 bg-gradient-to-t from-coffee-300/40 to-transparent rounded-full animate-steam animation-delay-700" />
+                      <div className="w-2 h-8 bg-gradient-to-t from-espresso-300/40 to-transparent rounded-full animate-steam animation-delay-700" />
                     </div>
                   </div>
                 </div>
 
                 {/* Quick info cards */}
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-cream-200">
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-warm-white-200">
                     <div className="w-12 h-12 rounded-full bg-sage-100 flex items-center justify-center flex-shrink-0">
                       <MapPin className="w-6 h-6 text-sage-600" />
                     </div>
                     <div>
-                      <p className="font-semibold text-coffee-800">Find Us</p>
+                      <p className="font-semibold text-coffee-900">Find Us</p>
                       <p className="text-sm text-coffee-600">{businessInfo.address.street}, {businessInfo.address.town}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-cream-200">
-                    <div className="w-12 h-12 rounded-full bg-terracotta-100 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-terracotta-600" />
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-warm-white-200">
+                    <div className="w-12 h-12 rounded-full bg-butter-200 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-butter-700" />
                     </div>
                     <div>
-                      <p className="font-semibold text-coffee-800">Today's Hours</p>
+                      <p className="font-semibold text-coffee-900">Today's Hours</p>
                       <p className="text-sm text-coffee-600">{formatTime(todayHours.open)} - {formatTime(todayHours.close)}</p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-cream-200">
-                    <div className="w-12 h-12 rounded-full bg-coffee-100 flex items-center justify-center flex-shrink-0">
-                      <Coffee className="w-6 h-6 text-coffee-600" />
+                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-warm-white-200">
+                    <div className="w-12 h-12 rounded-full bg-espresso-100 flex items-center justify-center flex-shrink-0">
+                      <Coffee className="w-6 h-6 text-espresso-700" />
                     </div>
                     <div>
-                      <p className="font-semibold text-coffee-800">Since {businessInfo.established}</p>
+                      <p className="font-semibold text-coffee-900">Since {businessInfo.established}</p>
                       <p className="text-sm text-coffee-600">Serving the community with love</p>
                     </div>
                   </div>
@@ -206,7 +206,7 @@ export default function Hero() {
               </div>
 
               {/* Decorative accent */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-terracotta-200/30 to-sage-200/30 rounded-3xl -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-butter-200/40 to-sage-200/30 rounded-3xl -z-10" />
             </div>
           </motion.div>
         </div>

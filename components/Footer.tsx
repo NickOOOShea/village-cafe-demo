@@ -8,30 +8,29 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const today = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase() as keyof typeof businessInfo.openingHours
-  const todayHours = businessInfo.openingHours[today]
 
   return (
-    <footer className="bg-coffee-800 text-cream-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-espresso-900 text-warm-white-100">
+      <div className="section-container py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* About */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-sage-gradient flex items-center justify-center">
+              <div className="w-9 h-9 rounded-full bg-sage-gradient flex items-center justify-center">
                 <Coffee className="w-5 h-5 text-white" />
               </div>
-              <h3 className="text-lg font-display font-bold text-white">
+              <h3 className="text-lg font-display text-white">
                 {businessInfo.name}
               </h3>
             </div>
-            <p className="text-cream-300 text-sm leading-relaxed">
+            <p className="text-warm-white-300 text-sm leading-relaxed">
               {businessInfo.description}
             </p>
           </div>
 
           {/* Opening Hours */}
           <div>
-            <h4 className="text-lg font-display font-semibold text-white mb-4 flex items-center gap-2">
+            <h4 className="text-lg font-display text-white mb-4 flex items-center gap-2">
               <Clock className="w-5 h-5 text-sage-400" />
               Opening Hours
             </h4>
@@ -40,7 +39,7 @@ export default function Footer() {
                 <div
                   key={day}
                   className={`flex justify-between ${
-                    day === today ? 'text-white font-semibold' : 'text-cream-300'
+                    day === today ? 'text-butter-300 font-semibold' : 'text-warm-white-300'
                   }`}
                 >
                   <span className="capitalize">{day}</span>
@@ -54,48 +53,48 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-display font-semibold text-white mb-4 flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-terracotta-400" />
+            <h4 className="text-lg font-display text-white mb-4 flex items-center gap-2">
+              <MapPin className="w-5 h-5 text-butter-400" />
               Visit Us
             </h4>
-            <address className="not-italic text-cream-300 text-sm space-y-2">
+            <address className="not-italic text-warm-white-300 text-sm space-y-2">
               <p>{businessInfo.address.street}</p>
               <p>{businessInfo.address.town}</p>
               <p>{businessInfo.address.county}</p>
-              <p className="pt-3 space-y-1">
+              <div className="pt-3 space-y-2">
                 <a
                   href={`tel:${businessInfo.contact.phone}`}
-                  className="flex items-center gap-2 hover:text-white transition-colors"
+                  className="flex items-center gap-2 hover:text-butter-300 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
                   {businessInfo.contact.phone}
                 </a>
                 <a
                   href={`mailto:${businessInfo.contact.email}`}
-                  className="flex items-center gap-2 hover:text-white transition-colors"
+                  className="flex items-center gap-2 hover:text-butter-300 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   {businessInfo.contact.email}
                 </a>
-              </p>
+              </div>
             </address>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="text-lg font-display font-semibold text-white mb-4">
+            <h4 className="text-lg font-display text-white mb-4">
               Legal
             </h4>
             <div className="space-y-2 text-sm">
               <a
                 href="/privacy"
-                className="block text-cream-300 hover:text-white transition-colors"
+                className="block text-warm-white-300 hover:text-butter-300 transition-colors"
               >
                 Privacy Policy
               </a>
               <a
                 href="/terms"
-                className="block text-cream-300 hover:text-white transition-colors"
+                className="block text-warm-white-300 hover:text-butter-300 transition-colors"
               >
                 Terms of Service
               </a>
@@ -104,7 +103,7 @@ export default function Footer() {
 
           {/* Social & Features */}
           <div>
-            <h4 className="text-lg font-display font-semibold text-white mb-4">
+            <h4 className="text-lg font-display text-white mb-4">
               Connect With Us
             </h4>
             <div className="flex gap-3 mb-6">
@@ -112,19 +111,19 @@ export default function Footer() {
                 href={businessInfo.contact.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-cream-800 hover:bg-sage-600 flex items-center justify-center transition-colors group"
+                className="w-10 h-10 rounded-full bg-espresso-800 hover:bg-sage-600 flex items-center justify-center transition-colors group"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5 text-cream-200 group-hover:text-white" />
+                <Facebook className="w-5 h-5 text-warm-white-200 group-hover:text-white" />
               </a>
               <a
                 href={`https://instagram.com/${businessInfo.contact.instagram.replace('@', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-cream-800 hover:bg-terracotta-600 flex items-center justify-center transition-colors group"
+                className="w-10 h-10 rounded-full bg-espresso-800 hover:bg-butter-500 flex items-center justify-center transition-colors group"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5 text-cream-200 group-hover:text-white" />
+                <Instagram className="w-5 h-5 text-warm-white-200 group-hover:text-espresso-900" />
               </a>
             </div>
             <div>
@@ -133,7 +132,7 @@ export default function Footer() {
                 {businessInfo.features.slice(0, 4).map((feature) => (
                   <span
                     key={feature}
-                    className="text-xs px-2 py-1 bg-cream-800 text-cream-200 rounded"
+                    className="text-xs px-2 py-1 bg-espresso-800 text-warm-white-200 rounded"
                   >
                     {feature}
                   </span>
@@ -144,9 +143,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-cream-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-cream-400">
+        <div className="mt-12 pt-8 border-t border-espresso-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-warm-white-400">
           <p>
-            © {currentYear} {businessInfo.name}. All rights reserved.
+            &copy; {currentYear} {businessInfo.name}. All rights reserved.
           </p>
           <p className="flex items-center gap-2">
             <span>Website by</span>

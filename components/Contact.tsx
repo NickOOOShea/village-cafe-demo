@@ -10,7 +10,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 lg:py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section-container">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="section-heading">
-            Visit <span className="text-gradient-terracotta">Us</span>
+            Visit <span className="text-gradient-warm">Us</span>
           </h2>
           <p className="section-subheading">
             We can't wait to welcome you to our cozy corner of {businessInfo.address.town}
@@ -43,7 +43,7 @@ export default function Contact() {
                   <MapPin className="w-6 h-6 text-sage-600" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-display font-bold text-coffee-900 mb-2">
+                  <h3 className="text-xl font-display text-coffee-900 mb-2">
                     Location
                   </h3>
                   <address className="not-italic text-coffee-600 leading-relaxed">
@@ -68,11 +68,11 @@ export default function Contact() {
             {/* Contact details */}
             <div className="card">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-terracotta-100 flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-terracotta-600" />
+                <div className="w-12 h-12 rounded-xl bg-butter-200 flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-butter-700" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-display font-bold text-coffee-900 mb-2">
+                  <h3 className="text-xl font-display text-coffee-900 mb-2">
                     Get in Touch
                   </h3>
                   <div className="space-y-3">
@@ -98,11 +98,11 @@ export default function Contact() {
             {/* Opening hours */}
             <div className="card">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-coffee-100 flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-coffee-600" />
+                <div className="w-12 h-12 rounded-xl bg-espresso-100 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6 text-espresso-700" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-display font-bold text-coffee-900 mb-4">
+                  <h3 className="text-xl font-display text-coffee-900 mb-4">
                     Opening Hours
                   </h3>
                   <div className="space-y-2">
@@ -128,7 +128,7 @@ export default function Contact() {
 
             {/* Social media */}
             <div className="card">
-              <h3 className="text-xl font-display font-bold text-coffee-900 mb-4">
+              <h3 className="text-xl font-display text-coffee-900 mb-4">
                 Follow Us
               </h3>
               <div className="flex gap-4">
@@ -145,10 +145,10 @@ export default function Contact() {
                   href={`https://instagram.com/${businessInfo.contact.instagram.replace('@', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 px-6 py-3 bg-terracotta-50 hover:bg-terracotta-100 rounded-xl transition-colors group flex-1"
+                  className="flex items-center gap-3 px-6 py-3 bg-butter-100 hover:bg-butter-200 rounded-xl transition-colors group flex-1"
                 >
-                  <Instagram className="w-5 h-5 text-terracotta-600 group-hover:scale-110 transition-transform" />
-                  <span className="font-semibold text-terracotta-700">Instagram</span>
+                  <Instagram className="w-5 h-5 text-butter-700 group-hover:scale-110 transition-transform" />
+                  <span className="font-semibold text-butter-800">Instagram</span>
                 </a>
               </div>
             </div>
@@ -162,7 +162,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="lg:sticky lg:top-24"
           >
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-2 border-sage-100">
+            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lifted border-2 border-sage-100">
               {/* Google Maps embed */}
               <iframe
                 src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.${Math.floor(businessInfo.coordinates.lat * 1000)}!2d${businessInfo.coordinates.lng}!3d${businessInfo.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM${Math.floor(businessInfo.coordinates.lat)}wrCwrDQ0MDYh!5e0!3m2!1sen!2sie!4v1234567890123!5m2!1sen!2sie`}
@@ -177,8 +177,8 @@ export default function Contact() {
               />
 
               {/* Overlay card with quick info */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-sage-100">
-                <p className="font-display font-bold text-lg text-coffee-900 mb-2">
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lifted border border-sage-100">
+                <p className="font-display text-lg text-coffee-900 mb-2">
                   {businessInfo.name}
                 </p>
                 <p className="text-sm text-coffee-600 mb-3">
@@ -188,9 +188,9 @@ export default function Contact() {
                   href={`https://www.google.com/maps/search/?api=1&query=${businessInfo.coordinates.lat},${businessInfo.coordinates.lng}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary text-sm py-2 px-4 w-full text-center"
+                  className="btn-primary text-sm py-2 px-4 w-full justify-center"
                 >
-                  <Navigation className="inline-block mr-2 w-4 h-4" />
+                  <Navigation className="w-4 h-4" />
                   Open in Maps
                 </a>
               </div>
@@ -201,7 +201,7 @@ export default function Contact() {
               {businessInfo.features.slice(-2).map((feature) => (
                 <div
                   key={feature}
-                  className="bg-gradient-to-br from-cream-50 to-white rounded-xl p-4 border border-sage-100 text-center"
+                  className="bg-gradient-to-br from-warm-white-50 to-white rounded-xl p-4 border border-sage-100 text-center"
                 >
                   <p className="text-sm font-semibold text-sage-700">{feature}</p>
                 </div>
@@ -218,9 +218,9 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-20 text-center"
         >
-          <div className="bg-gradient-to-br from-sage-500 to-sage-700 rounded-3xl p-12 md:p-16 text-white shadow-2xl relative overflow-hidden">
+          <div className="bg-sage-gradient rounded-3xl p-12 md:p-16 text-white shadow-lifted relative overflow-hidden">
             <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
+              <h3 className="text-3xl md:text-4xl font-display mb-4">
                 Ready to Visit?
               </h3>
               <p className="text-lg text-sage-100 mb-8 max-w-2xl mx-auto">
@@ -229,7 +229,7 @@ export default function Contact() {
               </p>
               <a
                 href={`tel:${businessInfo.contact.phone}`}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-sage-700 rounded-xl font-bold text-lg hover:bg-cream-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-sage-700 rounded-xl font-bold text-lg hover:bg-warm-white-50 transition-all shadow-lifted hover:shadow-2xl hover:scale-105 active:scale-95"
               >
                 <Phone className="w-5 h-5" />
                 {businessInfo.contact.phone}
@@ -238,7 +238,7 @@ export default function Contact() {
 
             {/* Decorative elements */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-terracotta-400/20 rounded-full blur-2xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-butter-400/20 rounded-full blur-2xl" />
           </div>
         </motion.div>
       </div>

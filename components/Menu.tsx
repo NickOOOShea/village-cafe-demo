@@ -20,7 +20,7 @@ export default function Menu() {
     if (dietary.includes('vegan')) return <Leaf className="w-3.5 h-3.5 text-emerald-600" />
     if (dietary.includes('vegetarian')) return <Leaf className="w-3.5 h-3.5 text-sage-600" />
     if (dietary.includes('gluten-free') || dietary.includes('gluten-free-option')) {
-      return <Wheat className="w-3.5 h-3.5 text-amber-600" />
+      return <Wheat className="w-3.5 h-3.5 text-butter-600" />
     }
     return null
   }
@@ -29,7 +29,7 @@ export default function Menu() {
     if (diet === 'vegan') return 'badge-vegan'
     if (diet === 'vegetarian') return 'badge-vegetarian'
     if (diet.includes('gluten-free')) return 'badge-gluten-free'
-    return 'bg-gray-100 text-gray-700'
+    return 'bg-warm-white-200 text-coffee-700'
   }
 
   const getDietaryLabel = (diet: string) => {
@@ -38,7 +38,7 @@ export default function Menu() {
 
   return (
     <section id="menu" className="py-20 lg:py-32 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section-container">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -122,15 +122,15 @@ export default function Menu() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
-                    className="card-menu group"
+                    className="card-menu group relative"
                   >
                     <div className="flex justify-between items-start mb-3">
                       <div className="flex-1">
-                        <h3 className="text-xl font-display font-bold text-coffee-900 group-hover:text-sage-700 transition-colors">
+                        <h3 className="text-xl font-display text-coffee-900 group-hover:text-sage-700 transition-colors">
                           {item.name}
                         </h3>
                       </div>
-                      <span className="text-xl font-display font-bold text-sage-600 ml-4">
+                      <span className="text-xl font-display text-sage-600 ml-4">
                         {formatPrice(item.price)}
                       </span>
                     </div>
@@ -198,7 +198,7 @@ export default function Menu() {
               <span className="text-sm text-coffee-600">Vegan</span>
             </div>
             <div className="flex items-center gap-2">
-              <Wheat className="w-4 h-4 text-amber-600" />
+              <Wheat className="w-4 h-4 text-butter-600" />
               <span className="text-sm text-coffee-600">Gluten Free</span>
             </div>
           </div>

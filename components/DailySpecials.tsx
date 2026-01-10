@@ -32,7 +32,7 @@ export default function DailySpecials() {
     if (dietary.includes('vegan')) return <Leaf className="w-4 h-4 text-emerald-600" />
     if (dietary.includes('vegetarian')) return <Leaf className="w-4 h-4 text-sage-600" />
     if (dietary.includes('gluten-free') || dietary.includes('gluten-free-option')) {
-      return <Wheat className="w-4 h-4 text-amber-600" />
+      return <Wheat className="w-4 h-4 text-butter-600" />
     }
     return null
   }
@@ -47,14 +47,14 @@ export default function DailySpecials() {
   }
 
   return (
-    <section id="specials" className="py-20 lg:py-32 bg-gradient-to-b from-cream-50 to-white relative overflow-hidden">
+    <section id="specials" className="py-20 lg:py-32 bg-gradient-to-b from-warm-white-50 to-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-terracotta-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-butter-200/30 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-96 h-96 bg-sage-200/20 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative section-container">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,13 +63,13 @@ export default function DailySpecials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-terracotta-100 rounded-full mb-4">
-            <Sparkles className="w-5 h-5 text-terracotta-600" />
-            <span className="text-sm font-semibold text-terracotta-700">Fresh Today</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-butter-200 rounded-full mb-4">
+            <Sparkles className="w-5 h-5 text-butter-700" />
+            <span className="text-sm font-semibold text-butter-800">Fresh Today</span>
           </div>
 
           <h2 className="section-heading">
-            Today's <span className="text-gradient-terracotta">Specials</span>
+            Today's <span className="text-gradient-warm">Specials</span>
           </h2>
           <p className="section-subheading">
             Handcrafted daily with the freshest local ingredients
@@ -85,17 +85,17 @@ export default function DailySpecials() {
           className="grid md:grid-cols-3 gap-8 mb-16"
         >
           {/* Soup special */}
-          <motion.div variants={itemVariants} className="card-special">
+          <motion.div variants={itemVariants} className="card group relative">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <span className="text-xs font-semibold text-terracotta-600 uppercase tracking-wide">
+                <span className="text-xs font-semibold text-butter-700 uppercase tracking-wide">
                   Soup of the Day
                 </span>
-                <h3 className="text-2xl font-display font-bold text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
+                <h3 className="text-2xl font-display text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
                   {specials.today.soup.name}
                 </h3>
               </div>
-              <span className="text-2xl font-display font-bold text-sage-600">
+              <span className="text-2xl font-display text-sage-600">
                 {formatPrice(specials.today.soup.price)}
               </span>
             </div>
@@ -113,21 +113,20 @@ export default function DailySpecials() {
                 </span>
               ))}
             </div>
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-sage-100/50 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
 
           {/* Quiche special */}
-          <motion.div variants={itemVariants} className="card-special">
+          <motion.div variants={itemVariants} className="card group relative">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <span className="text-xs font-semibold text-terracotta-600 uppercase tracking-wide">
+                <span className="text-xs font-semibold text-butter-700 uppercase tracking-wide">
                   Quiche of the Day
                 </span>
-                <h3 className="text-2xl font-display font-bold text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
+                <h3 className="text-2xl font-display text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
                   {specials.today.quiche.name}
                 </h3>
               </div>
-              <span className="text-2xl font-display font-bold text-sage-600">
+              <span className="text-2xl font-display text-sage-600">
                 {formatPrice(specials.today.quiche.price)}
               </span>
             </div>
@@ -145,21 +144,20 @@ export default function DailySpecials() {
                 </span>
               ))}
             </div>
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-terracotta-100/50 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
 
           {/* Cake special */}
-          <motion.div variants={itemVariants} className="card-special">
+          <motion.div variants={itemVariants} className="card group relative">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <span className="text-xs font-semibold text-terracotta-600 uppercase tracking-wide">
+                <span className="text-xs font-semibold text-butter-700 uppercase tracking-wide">
                   Cake of the Day
                 </span>
-                <h3 className="text-2xl font-display font-bold text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
+                <h3 className="text-2xl font-display text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
                   {specials.today.cake.name}
                 </h3>
               </div>
-              <span className="text-2xl font-display font-bold text-sage-600">
+              <span className="text-2xl font-display text-sage-600">
                 {formatPrice(specials.today.cake.price)}
               </span>
             </div>
@@ -177,7 +175,6 @@ export default function DailySpecials() {
                 </span>
               ))}
             </div>
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-coffee-100/50 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.div>
         </motion.div>
 
@@ -187,7 +184,7 @@ export default function DailySpecials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative bg-gradient-to-br from-sage-500 to-sage-700 rounded-3xl p-8 md:p-12 text-white shadow-2xl overflow-hidden"
+          className="relative bg-sage-gradient rounded-3xl p-8 md:p-12 text-white shadow-lifted overflow-hidden"
         >
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-4">
@@ -196,7 +193,7 @@ export default function DailySpecials() {
                 Seasonal Menu
               </span>
             </div>
-            <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
+            <h3 className="text-3xl md:text-4xl font-display mb-4">
               {specials.seasonalHighlight.title}
             </h3>
             <p className="text-lg text-sage-100 mb-6 max-w-2xl">
@@ -216,7 +213,7 @@ export default function DailySpecials() {
 
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-terracotta-400/20 rounded-full blur-2xl" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-butter-400/20 rounded-full blur-2xl" />
         </motion.div>
 
         {/* Weekly specials preview */}
@@ -227,7 +224,7 @@ export default function DailySpecials() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-12"
         >
-          <h3 className="text-2xl font-display font-bold text-center text-coffee-900 mb-8">
+          <h3 className="text-2xl font-display text-center text-coffee-900 mb-8">
             This Week's Soup Schedule
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
@@ -238,7 +235,7 @@ export default function DailySpecials() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.05 * index }}
-                className="bg-white rounded-xl p-4 shadow-warm border border-cream-200 text-center hover:shadow-lg hover:scale-105 transition-all"
+                className="bg-white rounded-xl p-4 shadow-warm border border-warm-white-200 text-center hover:shadow-card hover:scale-105 transition-all"
               >
                 <p className="text-xs font-semibold text-sage-600 uppercase tracking-wide mb-2">
                   {day.day}
