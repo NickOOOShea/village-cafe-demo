@@ -1,53 +1,38 @@
 {
-  "today": {
-    "soup": {
+  "today": [
+    {
+      "id": "1",
+      "category": "Soup",
       "name": "Roasted Tomato & Basil Soup",
       "description": "Slow-roasted tomatoes with fresh basil, served with brown bread",
       "price": 6.50,
       "dietary": ["vegan", "gluten-free-option"]
     },
-    "quiche": {
+    {
+      "id": "2",
+      "category": "Main",
       "name": "Spinach & Feta Quiche",
       "description": "With mixed leaf salad and balsamic dressing",
       "price": 9.50,
       "dietary": ["vegetarian"]
     },
-    "cake": {
+    {
+      "id": "3",
+      "category": "Sweet",
       "name": "Lemon Drizzle Cake",
       "description": "Moist sponge with tangy lemon glaze",
       "price": 4.00,
       "dietary": ["vegetarian"]
     }
-  },
+  ],
   "weeklySpecials": [
-    {
-      "day": "Monday",
-      "special": "Mushroom & Thyme Soup"
-    },
-    {
-      "day": "Tuesday",
-      "special": "Thai Curry Soup"
-    },
-    {
-      "day": "Wednesday",
-      "special": "Leek & Potato Soup"
-    },
-    {
-      "day": "Thursday",
-      "special": "Butternut Squash Soup"
-    },
-    {
-      "day": "Friday",
-      "special": "Seafood Chowder"
-    },
-    {
-      "day": "Saturday",
-      "special": "Chef's Special - Ask Inside"
-    },
-    {
-      "day": "Sunday",
-      "special": "Roasted Vegetable Soup"
-    }
+    { "day": "Monday", "special": "Mushroom & Thyme Soup" },
+    { "day": "Tuesday", "special": "Thai Curry Soup" },
+    { "day": "Wednesday", "special": "Leek & Potato Soup" },
+    { "day": "Thursday", "special": "Butternut Squash Soup" },
+    { "day": "Friday", "special": "Seafood Chowder" },
+    { "day": "Saturday", "special": "Chef's Special - Ask Inside" },
+    { "day": "Sunday", "special": "Roasted Vegetable Soup" }
   ],
   "seasonalHighlight": {
     "title": "Autumn Menu",

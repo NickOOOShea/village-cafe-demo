@@ -5,6 +5,16 @@ import { Sparkles, Leaf, Wheat, Calendar } from 'lucide-react'
 import specials from '@/app/data/specials.json'
 import { formatPrice } from '@/lib/utils'
 
+// Type for a special item - flexible structure
+interface SpecialItem {
+  id: string
+  category: string
+  name: string
+  description: string
+  price: number
+  dietary: string[]
+}
+
 export default function DailySpecials() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,6 +56,9 @@ export default function DailySpecials() {
     return ''
   }
 
+  // Cast to array - flexible schema
+  const todaySpecials = specials.today as SpecialItem[]
+
   return (
     <section id="specials" className="py-20 lg:py-32 bg-gradient-to-b from-warm-white-50 to-white relative overflow-hidden">
       {/* Background decoration */}
@@ -76,7 +89,7 @@ export default function DailySpecials() {
           </p>
         </motion.div>
 
-        {/* Today's specials grid */}
+        {/* Today's specials grid - DYNAMIC from array */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -84,98 +97,37 @@ export default function DailySpecials() {
           viewport={{ once: true }}
           className="grid md:grid-cols-3 gap-8 mb-16"
         >
-          {/* Soup special */}
-          <motion.div variants={itemVariants} className="card group relative">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <span className="text-xs font-semibold text-butter-700 uppercase tracking-wide">
-                  Soup of the Day
+          {todaySpecials.map((item) => (
+            <motion.div key={item.id} variants={itemVariants} className="card group relative">
+              <div className="flex items-start justify-between mb-4">
+                <div>
+                  <span className="text-xs font-semibold text-butter-700 uppercase tracking-wide">
+                    {item.category}
+                  </span>
+                  <h3 className="text-2xl font-display text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
+                    {item.name}
+                  </h3>
+                </div>
+                <span className="text-2xl font-display text-sage-600">
+                  {formatPrice(item.price)}
                 </span>
-                <h3 className="text-2xl font-display text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
-                  {specials.today.soup.name}
-                </h3>
               </div>
-              <span className="text-2xl font-display text-sage-600">
-                {formatPrice(specials.today.soup.price)}
-              </span>
-            </div>
-            <p className="text-coffee-600 mb-4 leading-relaxed">
-              {specials.today.soup.description}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {specials.today.soup.dietary.map((diet) => (
-                <span
-                  key={diet}
-                  className={`badge-dietary ${getDietaryBadgeClass([diet])}`}
-                >
-                  {getDietaryIcon([diet])}
-                  <span className="capitalize">{diet.replace('-', ' ')}</span>
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Quiche special */}
-          <motion.div variants={itemVariants} className="card group relative">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <span className="text-xs font-semibold text-butter-700 uppercase tracking-wide">
-                  Quiche of the Day
-                </span>
-                <h3 className="text-2xl font-display text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
-                  {specials.today.quiche.name}
-                </h3>
+              <p className="text-coffee-600 mb-4 leading-relaxed">
+                {item.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {item.dietary.map((diet) => (
+                  <span
+                    key={diet}
+                    className={`badge-dietary ${getDietaryBadgeClass([diet])}`}
+                  >
+                    {getDietaryIcon([diet])}
+                    <span className="capitalize">{diet.replace('-', ' ')}</span>
+                  </span>
+                ))}
               </div>
-              <span className="text-2xl font-display text-sage-600">
-                {formatPrice(specials.today.quiche.price)}
-              </span>
-            </div>
-            <p className="text-coffee-600 mb-4 leading-relaxed">
-              {specials.today.quiche.description}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {specials.today.quiche.dietary.map((diet) => (
-                <span
-                  key={diet}
-                  className={`badge-dietary ${getDietaryBadgeClass([diet])}`}
-                >
-                  {getDietaryIcon([diet])}
-                  <span className="capitalize">{diet.replace('-', ' ')}</span>
-                </span>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Cake special */}
-          <motion.div variants={itemVariants} className="card group relative">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <span className="text-xs font-semibold text-butter-700 uppercase tracking-wide">
-                  Cake of the Day
-                </span>
-                <h3 className="text-2xl font-display text-coffee-900 mt-1 group-hover:text-sage-700 transition-colors">
-                  {specials.today.cake.name}
-                </h3>
-              </div>
-              <span className="text-2xl font-display text-sage-600">
-                {formatPrice(specials.today.cake.price)}
-              </span>
-            </div>
-            <p className="text-coffee-600 mb-4 leading-relaxed">
-              {specials.today.cake.description}
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {specials.today.cake.dietary.map((diet) => (
-                <span
-                  key={diet}
-                  className={`badge-dietary ${getDietaryBadgeClass([diet])}`}
-                >
-                  {getDietaryIcon([diet])}
-                  <span className="capitalize">{diet.replace('-', ' ')}</span>
-                </span>
-              ))}
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Seasonal highlight */}
