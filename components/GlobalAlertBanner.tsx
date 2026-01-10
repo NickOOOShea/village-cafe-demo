@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { X, AlertTriangle, Info, AlertCircle, Bell } from 'lucide-react'
 
-interface GlobalAlert {
+export interface GlobalAlert {
   active: boolean
   level: 'info' | 'warning' | 'urgent' | 'emergency'
   headline: string

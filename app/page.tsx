@@ -4,8 +4,10 @@ import FoodGallery from '@/components/FoodGallery'
 import Menu from '@/components/Menu'
 import OurStory from '@/components/OurStory'
 import Contact from '@/components/Contact'
-import GlobalAlertBanner from '@/components/GlobalAlertBanner'
-import globalAlert from '../data/global_alert.json'
+import GlobalAlertBanner, { type GlobalAlert } from '@/components/GlobalAlertBanner'
+import globalAlertData from '../data/global_alert.json'
+
+const globalAlert = globalAlertData as GlobalAlert
 
 export default function Home() {
   return (
