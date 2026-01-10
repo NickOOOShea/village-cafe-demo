@@ -1,27 +1,23 @@
 {
   "today": {
-    "specials": [
-      {
-        "id": "wild-mushroom-thyme-toastie",
-        "name": "Wild Mushroom & Thyme Toastie",
-        "price": 8.5,
-        "dietary": [
-          "vegetarian"
-        ],
-        "category": "hot-food",
-        "available": true,
-        "description": "Freshly made toastie with wild mushrooms and aromatic thyme"
-      },
-      {
-        "id": "spiced-apple-pork-sausage-brioche",
-        "name": "Spiced Apple & Pork Sausage Brioche",
-        "price": 9.5,
-        "dietary": [],
-        "category": "hot-food",
-        "available": true,
-        "description": "Premium pork sausage with spiced apple in a soft brioche bun"
-      }
-    ]
+    "soup": {
+      "name": "Roasted Tomato & Basil Soup",
+      "description": "Slow-roasted tomatoes with fresh basil, served with brown bread",
+      "price": 6.50,
+      "dietary": ["vegan", "gluten-free-option"]
+    },
+    "quiche": {
+      "name": "Spinach & Feta Quiche",
+      "description": "With mixed leaf salad and balsamic dressing",
+      "price": 9.50,
+      "dietary": ["vegetarian"]
+    },
+    "cake": {
+      "name": "Lemon Drizzle Cake",
+      "description": "Moist sponge with tangy lemon glaze",
+      "price": 4.00,
+      "dietary": ["vegetarian"]
+    }
   },
   "weeklySpecials": [
     {
