@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-01-10T12:00:00Z",
+  "updatedBy": "admin",
+  "active": false,
+  "level": "info",
+  "headline": "",
+  "message": "",
+  "expires_at": null,
+  "display_settings": {
+    "show_on_all_pages": true,
+    "dismissible": true
+  }
+}
