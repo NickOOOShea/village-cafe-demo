@@ -101,7 +101,7 @@ export default function OurStory() {
             {/* Cafe Interior Photo */}
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-lifted">
               <Image
-                src="/images/atmosphere/cafe-interior.jpg"
+                src="/images/atmosphere/cafe-interior.webp"
                 alt="Village Cafe interior with warm, welcoming atmosphere"
                 fill
                 className="object-cover"
