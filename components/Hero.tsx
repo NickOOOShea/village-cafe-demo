@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Coffee, MapPin, Clock, Phone, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 import businessInfo from '@/app/data/business-info.json'
 import { formatTime } from '@/lib/utils'
 
@@ -142,7 +143,7 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Right column - Visual element / Features */}
+          {/* Right column - Photo collage */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -150,60 +151,90 @@ export default function Hero() {
             className="hidden lg:block"
           >
             <div className="relative">
-              {/* Main card with coffee cup illustration */}
-              <div className="relative bg-gradient-to-br from-white to-warm-white-100 rounded-3xl p-12 shadow-lifted border-2 border-sage-100">
-                {/* Coffee cup illustration placeholder */}
-                <div className="flex items-center justify-center mb-8">
-                  <div className="relative">
-                    <div className="w-48 h-48 bg-gradient-to-br from-espresso-800 to-espresso-900 rounded-full flex items-center justify-center shadow-2xl">
-                      <Coffee className="w-24 h-24 text-warm-white-50" strokeWidth={1.5} />
-                    </div>
-                    {/* Steam effect */}
-                    <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                      <div className="w-2 h-8 bg-gradient-to-t from-espresso-300/40 to-transparent rounded-full animate-steam" />
-                    </div>
-                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 ml-4">
-                      <div className="w-2 h-8 bg-gradient-to-t from-espresso-300/40 to-transparent rounded-full animate-steam animation-delay-500" />
-                    </div>
-                    <div className="absolute -top-6 left-1/2 -translate-x-1/2 -ml-4">
-                      <div className="w-2 h-8 bg-gradient-to-t from-espresso-300/40 to-transparent rounded-full animate-steam animation-delay-700" />
-                    </div>
-                  </div>
-                </div>
+              {/* Photo collage grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {/* Main large image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="col-span-2 relative aspect-[16/10] rounded-3xl overflow-hidden shadow-lifted"
+                >
+                  <Image
+                    src="/images/coffee/latte-art-1.webp"
+                    alt="Beautiful latte art"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-espresso-900/30 to-transparent" />
+                </motion.div>
 
-                {/* Quick info cards */}
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-warm-white-200">
-                    <div className="w-12 h-12 rounded-full bg-sage-100 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-sage-600" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-coffee-900">Find Us</p>
-                      <p className="text-sm text-coffee-600">{businessInfo.address.street}, {businessInfo.address.town}</p>
-                    </div>
-                  </div>
+                {/* Bottom left image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="relative aspect-square rounded-2xl overflow-hidden shadow-card"
+                >
+                  <Image
+                    src="/images/bakery/croissant-classic.webp"
+                    alt="Fresh croissants"
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
 
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-warm-white-200">
-                    <div className="w-12 h-12 rounded-full bg-butter-200 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-butter-700" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-coffee-900">Today's Hours</p>
-                      <p className="text-sm text-coffee-600">{formatTime(todayHours.open)} - {formatTime(todayHours.close)}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-warm border border-warm-white-200">
-                    <div className="w-12 h-12 rounded-full bg-espresso-100 flex items-center justify-center flex-shrink-0">
-                      <Coffee className="w-6 h-6 text-espresso-700" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-coffee-900">Since {businessInfo.established}</p>
-                      <p className="text-sm text-coffee-600">Serving the community with love</p>
-                    </div>
-                  </div>
-                </div>
+                {/* Bottom right image */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                  className="relative aspect-square rounded-2xl overflow-hidden shadow-card"
+                >
+                  <Image
+                    src="/images/food/avocado-toast.webp"
+                    alt="Avocado toast"
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
               </div>
+
+              {/* Quick info floating cards */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="absolute -left-6 top-1/2 -translate-y-1/2 flex flex-col gap-3"
+              >
+                <div className="flex items-center gap-3 p-3 bg-white/95 backdrop-blur-sm rounded-xl shadow-lifted border border-sage-100">
+                  <div className="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-sage-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-coffee-900">{businessInfo.address.town}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 bg-white/95 backdrop-blur-sm rounded-xl shadow-lifted border border-butter-200">
+                  <div className="w-10 h-10 rounded-full bg-butter-100 flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-5 h-5 text-butter-700" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-coffee-900">{formatTime(todayHours.open)} - {formatTime(todayHours.close)}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 bg-white/95 backdrop-blur-sm rounded-xl shadow-lifted border border-espresso-200">
+                  <div className="w-10 h-10 rounded-full bg-espresso-100 flex items-center justify-center flex-shrink-0">
+                    <Coffee className="w-5 h-5 text-espresso-700" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-coffee-900">Est. {businessInfo.established}</p>
+                  </div>
+                </div>
+              </motion.div>
 
               {/* Decorative accent */}
               <div className="absolute -bottom-4 -right-4 w-full h-full bg-gradient-to-br from-butter-200/40 to-sage-200/30 rounded-3xl -z-10" />
