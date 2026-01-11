@@ -2,26 +2,18 @@
   "today": [
     {
       "id": "1",
-      "category": "Soup",
-      "name": "Roasted Tomato & Basil Soup",
-      "description": "Slow-roasted tomatoes with fresh basil, served with brown bread",
-      "price": 6.50,
-      "dietary": ["vegan", "gluten-free-option"]
+      "category": "Breakfast",
+      "name": "Full Irish Lite",
+      "description": "A lighter version of our classic - bacon, sausage, eggs, grilled tomato, and toast",
+      "price": 10.00,
+      "dietary": []
     },
     {
       "id": "2",
-      "category": "Main",
-      "name": "Spinach & Feta Quiche",
-      "description": "With mixed leaf salad and balsamic dressing",
-      "price": 9.50,
-      "dietary": ["vegetarian"]
-    },
-    {
-      "id": "3",
-      "category": "Sweet",
-      "name": "Lemon Drizzle Cake",
-      "description": "Moist sponge with tangy lemon glaze",
-      "price": 4.00,
+      "category": "Breakfast",
+      "name": "Mushroom & Thyme Scramble",
+      "description": "Creamy scrambled eggs with sautéed mushrooms and fresh thyme on sourdough toast",
+      "price": 8.00,
       "dietary": ["vegetarian"]
     }
   ],
