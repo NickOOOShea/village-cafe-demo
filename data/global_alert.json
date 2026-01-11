@@ -1,12 +1,12 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-01-10T12:00:00Z",
+  "lastUpdated": "2026-01-11T00:30:00Z",
   "updatedBy": "admin",
-  "active": false,
+  "active": true,
   "level": "info",
-  "headline": "",
-  "message": "",
-  "expires_at": null,
+  "headline": "Closed Tomorrow (Sunday 12th)",
+  "message": "We're closed for a private function. Normal hours resume Monday.",
+  "expires_at": "2026-01-13T00:00:00Z",
   "display_settings": {
     "show_on_all_pages": true,
     "dismissible": true
