@@ -192,7 +192,7 @@ All content is stored in JSON files, making voice updates easy:
 **Example voice command**:
 "Change the soup of the day to mushroom and thyme soup for €6.50"
 
-**AI updates**: `specials.json` → `today.soup` object
+**AI updates**: `specials.json` → `today` array (items with id, category, name, price, description)
 
 **Result**: Immediate reflection on website after approval
 

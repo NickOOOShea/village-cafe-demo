@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Coffee, UtensilsCrossed, Cookie, Sunrise, Leaf, Wheat } from 'lucide-react'
-import menuData from '@/app/data/menu.json'
+import menuData from '@/data/menu.json'
 import { formatPrice } from '@/lib/utils'
 
 export default function Menu() {

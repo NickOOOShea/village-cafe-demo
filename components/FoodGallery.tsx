@@ -4,35 +4,16 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
+import galleryData from '@/data/gallery.json'
 
 interface GalleryImage {
+  id: string
   src: string
   alt: string
   category: string
 }
 
-const galleryImages: GalleryImage[] = [
-  // Coffee
-  { src: '/images/coffee/latte-art-1.webp', alt: 'Cafe latte with beautiful art', category: 'Coffee' },
-  { src: '/images/coffee/latte-art-2.webp', alt: 'Latte art in blue mug', category: 'Coffee' },
-  { src: '/images/coffee/latte-art-3.webp', alt: 'Heart latte art', category: 'Coffee' },
-  { src: '/images/coffee/latte-art-4.webp', alt: 'Fresh espresso', category: 'Coffee' },
-  // Bakery
-  { src: '/images/bakery/croissant-classic.webp', alt: 'Fresh baked croissants', category: 'Bakery' },
-  { src: '/images/bakery/croissant-wooden.webp', alt: 'Croissant on wooden board', category: 'Bakery' },
-  { src: '/images/bakery/chocolate-croissant.webp', alt: 'Chocolate croissant with strawberries', category: 'Bakery' },
-  { src: '/images/bakery/pastries-variety.webp', alt: 'Variety of pastries', category: 'Bakery' },
-  { src: '/images/bakery/bakery-display.webp', alt: 'Bakery display case', category: 'Bakery' },
-  { src: '/images/bakery/bread-display.webp', alt: 'Fresh bread selection', category: 'Bakery' },
-  // Food
-  { src: '/images/food/avocado-toast.webp', alt: 'Avocado toast', category: 'Brunch' },
-  { src: '/images/food/breakfast-plate.webp', alt: 'Full breakfast plate', category: 'Brunch' },
-  { src: '/images/food/poached-egg-sandwich.webp', alt: 'Poached egg sandwich', category: 'Brunch' },
-  { src: '/images/food/tartine-halloumi.webp', alt: 'Halloumi tartine', category: 'Brunch' },
-  // Atmosphere
-  { src: '/images/atmosphere/cafe-cozy.webp', alt: 'Cozy cafe interior', category: 'Atmosphere' },
-  { src: '/images/atmosphere/cafe-interior.webp', alt: 'Cafe seating area', category: 'Atmosphere' },
-]
+const galleryImages: GalleryImage[] = galleryData.images
 
 export default function FoodGallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)

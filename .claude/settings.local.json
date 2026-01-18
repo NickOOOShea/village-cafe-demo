@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "supabase",
+    "github",
+    "figma",
+    "browser-tools",
+    "docker",
+    "directus",
+    "directus-alt"
+  ]
+}

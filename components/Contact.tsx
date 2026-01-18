@@ -2,11 +2,19 @@
 
 import { motion } from 'framer-motion'
 import { MapPin, Phone, Mail, Clock, Navigation, Facebook, Instagram } from 'lucide-react'
-import businessInfo from '@/app/data/business-info.json'
+import businessInfo from '@/data/business-info.json'
 import { formatTime } from '@/lib/utils'
 
+const DAY_LABEL: Record<string, string> = {
+  monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday',
+  thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday'
+}
+const getSocialUrl = (platform: string) => businessInfo.social.find(s => s.platform === platform)?.url || '#'
+const getFeatureNames = () => businessInfo.features.map(f => f.name)
+
 export default function Contact() {
-  const today = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase() as keyof typeof businessInfo.openingHours
+  const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+  const todayKey = days[new Date().getDay()]
 
   return (
     <section id="contact" className="py-20 lg:py-32 bg-white relative">
@@ -53,7 +61,7 @@ export default function Contact() {
                     {businessInfo.address.eircode}
                   </address>
                   <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${businessInfo.coordinates.lat},${businessInfo.coordinates.lng}`}
+                    href={`https://www.google.com/maps/search/?api=1&query=${businessInfo.location.lat},${businessInfo.location.lng}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 mt-4 text-sage-600 hover:text-sage-700 font-semibold group"
@@ -77,11 +85,11 @@ export default function Contact() {
                   </h3>
                   <div className="space-y-3">
                     <a
-                      href={`tel:${businessInfo.contact.phone}`}
+                      href={`tel:${businessInfo.contact.primaryPhone}`}
                       className="flex items-center gap-2 text-coffee-600 hover:text-sage-600 transition-colors"
                     >
                       <Phone className="w-4 h-4" />
-                      {businessInfo.contact.phone}
+                      {businessInfo.contact.primaryPhone}
                     </a>
                     <a
                       href={`mailto:${businessInfo.contact.email}`}
@@ -106,18 +114,18 @@ export default function Contact() {
                     Opening Hours
                   </h3>
                   <div className="space-y-2">
-                    {Object.entries(businessInfo.openingHours).map(([day, hours]) => (
+                    {businessInfo.hours.map((entry) => (
                       <div
-                        key={day}
+                        key={entry.day}
                         className={`flex justify-between py-2 px-3 rounded-lg ${
-                          day === today
+                          entry.day === todayKey
                             ? 'bg-sage-50 font-semibold text-sage-900'
                             : 'text-coffee-600'
                         }`}
                       >
-                        <span className="capitalize">{day}</span>
+                        <span>{DAY_LABEL[entry.day]}</span>
                         <span>
-                          {formatTime(hours.open)} - {formatTime(hours.close)}
+                          {entry.closed ? 'Closed' : `${formatTime(entry.open)} - ${formatTime(entry.close)}`}
                         </span>
                       </div>
                     ))}
@@ -133,7 +141,7 @@ export default function Contact() {
               </h3>
               <div className="flex gap-4">
                 <a
-                  href={businessInfo.contact.facebook}
+                  href={getSocialUrl('facebook')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-3 bg-sage-50 hover:bg-sage-100 rounded-xl transition-colors group flex-1"
@@ -142,7 +150,7 @@ export default function Contact() {
                   <span className="font-semibold text-sage-700">Facebook</span>
                 </a>
                 <a
-                  href={`https://instagram.com/${businessInfo.contact.instagram.replace('@', '')}`}
+                  href={getSocialUrl('instagram')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 px-6 py-3 bg-butter-100 hover:bg-butter-200 rounded-xl transition-colors group flex-1"
@@ -165,7 +173,7 @@ export default function Contact() {
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lifted border-2 border-sage-100">
               {/* Google Maps embed */}
               <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.${Math.floor(businessInfo.coordinates.lat * 1000)}!2d${businessInfo.coordinates.lng}!3d${businessInfo.coordinates.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM${Math.floor(businessInfo.coordinates.lat)}wrCwrDQ0MDYh!5e0!3m2!1sen!2sie!4v1234567890123!5m2!1sen!2sie`}
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.${Math.floor(businessInfo.location.lat * 1000)}!2d${businessInfo.location.lng}!3d${businessInfo.location.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM${Math.floor(businessInfo.location.lat)}wrCwrDQ0MDYh!5e0!3m2!1sen!2sie!4v1234567890123!5m2!1sen!2sie`}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -185,7 +193,7 @@ export default function Contact() {
                   {businessInfo.address.street}, {businessInfo.address.town}
                 </p>
                 <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${businessInfo.coordinates.lat},${businessInfo.coordinates.lng}`}
+                  href={`https://www.google.com/maps/search/?api=1&query=${businessInfo.location.lat},${businessInfo.location.lng}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-sm py-2 px-4 w-full justify-center"
@@ -198,7 +206,7 @@ export default function Contact() {
 
             {/* Features below map */}
             <div className="mt-6 grid grid-cols-2 gap-4">
-              {businessInfo.features.slice(-2).map((feature) => (
+              {getFeatureNames().slice(-2).map((feature) => (
                 <div
                   key={feature}
                   className="bg-gradient-to-br from-warm-white-50 to-white rounded-xl p-4 border border-sage-100 text-center"
@@ -228,11 +236,11 @@ export default function Contact() {
                 feel free to give us a call to ensure we have space for you.
               </p>
               <a
-                href={`tel:${businessInfo.contact.phone}`}
+                href={`tel:${businessInfo.contact.primaryPhone}`}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-white text-sage-700 rounded-xl font-bold text-lg hover:bg-warm-white-50 transition-all shadow-lifted hover:shadow-2xl hover:scale-105 active:scale-95"
               >
                 <Phone className="w-5 h-5" />
-                {businessInfo.contact.phone}
+                {businessInfo.contact.primaryPhone}
               </a>
             </div>
 

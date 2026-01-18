@@ -107,14 +107,14 @@
 
   /* Section headings */
   .section-heading {
-    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
     @apply font-display text-coffee-900;
-    @apply mb-6 tracking-tight;
+    @apply mb-4 sm:mb-6 tracking-tight;
   }
 
   .section-subheading {
-    @apply text-xl md:text-2xl text-coffee-700;
-    @apply max-w-3xl mx-auto mb-16 leading-relaxed;
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl text-coffee-700;
+    @apply max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 leading-relaxed;
   }
 
   /* Container */

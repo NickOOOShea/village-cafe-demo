@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Heart, Users, Sprout, Award } from 'lucide-react'
 import Image from 'next/image'
-import businessInfo from '@/app/data/business-info.json'
+import businessInfo from '@/data/business-info.json'
 
 export default function OurStory() {
   const values = [

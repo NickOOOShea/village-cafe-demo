@@ -1,13 +1,29 @@
 'use client'
 
 import { Coffee, Phone, Mail, MapPin, Facebook, Instagram, Clock } from 'lucide-react'
-import businessInfo from '@/app/data/business-info.json'
+import businessInfo from '@/data/business-info.json'
 import { formatTime } from '@/lib/utils'
+
+// Day labels map
+const DAY_LABEL: Record<string, string> = {
+  monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday',
+  thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday'
+}
+
+// Helper to get social URL
+const getSocialUrl = (platform: string) => {
+  const social = businessInfo.social.find(s => s.platform === platform)
+  return social?.url || '#'
+}
+
+// Helper to get feature names (features is now array of objects)
+const getFeatureNames = () => businessInfo.features.map(f => f.name)
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const today = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase() as keyof typeof businessInfo.openingHours
+  const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+  const todayKey = days[new Date().getDay()]
 
   return (
     <footer className="bg-espresso-900 text-warm-white-100">
@@ -35,16 +51,16 @@ export default function Footer() {
               Opening Hours
             </h4>
             <div className="space-y-2 text-sm">
-              {Object.entries(businessInfo.openingHours).map(([day, hours]) => (
+              {businessInfo.hours.map((entry) => (
                 <div
-                  key={day}
+                  key={entry.day}
                   className={`flex justify-between ${
-                    day === today ? 'text-butter-300 font-semibold' : 'text-warm-white-300'
+                    entry.day === todayKey ? 'text-butter-300 font-semibold' : 'text-warm-white-300'
                   }`}
                 >
-                  <span className="capitalize">{day}</span>
+                  <span>{DAY_LABEL[entry.day]}</span>
                   <span>
-                    {formatTime(hours.open)} - {formatTime(hours.close)}
+                    {entry.closed ? 'Closed' : `${formatTime(entry.open)} - ${formatTime(entry.close)}`}
                   </span>
                 </div>
               ))}
@@ -63,11 +79,11 @@ export default function Footer() {
               <p>{businessInfo.address.county}</p>
               <div className="pt-3 space-y-2">
                 <a
-                  href={`tel:${businessInfo.contact.phone}`}
+                  href={`tel:${businessInfo.contact.primaryPhone}`}
                   className="flex items-center gap-2 hover:text-butter-300 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  {businessInfo.contact.phone}
+                  {businessInfo.contact.primaryPhone}
                 </a>
                 <a
                   href={`mailto:${businessInfo.contact.email}`}
@@ -108,7 +124,7 @@ export default function Footer() {
             </h4>
             <div className="flex gap-3 mb-6">
               <a
-                href={businessInfo.contact.facebook}
+                href={getSocialUrl('facebook')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-espresso-800 hover:bg-sage-600 flex items-center justify-center transition-colors group"
@@ -117,7 +133,7 @@ export default function Footer() {
                 <Facebook className="w-5 h-5 text-warm-white-200 group-hover:text-white" />
               </a>
               <a
-                href={`https://instagram.com/${businessInfo.contact.instagram.replace('@', '')}`}
+                href={getSocialUrl('instagram')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-espresso-800 hover:bg-butter-500 flex items-center justify-center transition-colors group"
@@ -129,7 +145,7 @@ export default function Footer() {
             <div>
               <p className="text-sm font-semibold text-white mb-2">What We Offer</p>
               <div className="flex flex-wrap gap-2">
-                {businessInfo.features.slice(0, 4).map((feature) => (
+                {getFeatureNames().slice(0, 4).map((feature) => (
                   <span
                     key={feature}
                     className="text-xs px-2 py-1 bg-espresso-800 text-warm-white-200 rounded"
@@ -155,7 +171,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-sage-400 hover:text-sage-300 font-medium transition-colors"
             >
-              Connecteire
+              ConnectÉire
             </a>
           </p>
         </div>

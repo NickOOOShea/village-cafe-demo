@@ -2,8 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { Sparkles, Leaf, Wheat, Calendar } from 'lucide-react'
-import specials from '@/app/data/specials.json'
+import specials from '@/data/specials.json'
 import { formatPrice } from '@/lib/utils'
+
+const DAY_LABEL: Record<string, string> = {
+  monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday',
+  thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday'
+}
 
 // Type for a special item - flexible structure
 interface SpecialItem {
@@ -154,10 +159,10 @@ export default function DailySpecials() {
             <div className="flex flex-wrap gap-3">
               {specials.seasonalHighlight.items.map((item) => (
                 <span
-                  key={item}
+                  key={item.id}
                   className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold border border-white/30"
                 >
-                  {item}
+                  {item.name}
                 </span>
               ))}
             </div>
@@ -182,7 +187,7 @@ export default function DailySpecials() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {specials.weeklySpecials.map((day, index) => (
               <motion.div
-                key={day.day}
+                key={day.id}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -190,7 +195,7 @@ export default function DailySpecials() {
                 className="bg-white rounded-xl p-4 shadow-warm border border-warm-white-200 text-center hover:shadow-card hover:scale-105 transition-all"
               >
                 <p className="text-xs font-semibold text-sage-600 uppercase tracking-wide mb-2">
-                  {day.day}
+                  {DAY_LABEL[day.day] || day.day}
                 </p>
                 <p className="text-sm text-coffee-700 font-medium">
                   {day.special}

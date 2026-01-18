@@ -1,0 +1,64 @@
+{
+  "allergenNotice": "Please inform staff of any allergies. Full allergen information available on request.",
+  "categories": [
+    {
+      "id": "cat_001",
+      "name": "Coffee & Drinks",
+      "description": "Specialty coffee roasted fresh in Galway, plus our selection of teas and cold drinks",
+      "items": [
+        { "id": "item_001", "name": "Espresso", "description": "Double shot of our house blend", "price": 3.00, "dietary": [] },
+        { "id": "item_002", "name": "Americano", "description": "Espresso with hot water", "price": 3.50, "dietary": [] },
+        { "id": "item_003", "name": "Cappuccino", "description": "Espresso with steamed milk and foam", "price": 4.00, "dietary": ["vegetarian"] },
+        { "id": "item_004", "name": "Latte", "description": "Espresso with steamed milk", "price": 4.20, "dietary": ["vegetarian"], "options": ["Oat milk", "Almond milk", "Soy milk"] },
+        { "id": "item_005", "name": "Mocha", "description": "Espresso with chocolate and steamed milk", "price": 4.50, "dietary": ["vegetarian"] },
+        { "id": "item_006", "name": "Loose Leaf Tea", "description": "Selection of Irish breakfast, earl grey, green, peppermint", "price": 3.20, "dietary": ["vegan", "gluten-free"] },
+        { "id": "item_007", "name": "Hot Chocolate", "description": "Rich Belgian chocolate with whipped cream", "price": 4.20, "dietary": ["vegetarian"] }
+      ]
+    },
+    {
+      "id": "cat_002",
+      "name": "Breakfast",
+      "description": "Served until 12:00pm daily",
+      "items": [
+        { "id": "item_008", "name": "Full Irish Breakfast", "description": "Bacon, sausage, eggs, black & white pudding, grilled tomato, mushrooms, toast", "price": 12.50, "dietary": [] },
+        { "id": "item_009", "name": "Vegetarian Breakfast", "description": "Halloumi, eggs, avocado, grilled tomato, mushrooms, spinach, toast", "price": 11.50, "dietary": ["vegetarian"] },
+        { "id": "item_010", "name": "Eggs Benedict", "description": "Poached eggs, ham, hollandaise on toasted muffin", "price": 10.50, "dietary": [] },
+        { "id": "item_011", "name": "Smashed Avocado Toast", "description": "Poached eggs, chili flakes, sourdough", "price": 9.50, "dietary": ["vegetarian"] },
+        { "id": "item_012", "name": "Porridge Bowl", "description": "Steel-cut oats, honey, seasonal berries, toasted almonds", "price": 7.50, "dietary": ["vegetarian", "gluten-free-option"] },
+        { "id": "item_013", "name": "Homemade Granola", "description": "Greek yogurt, seasonal fruit, honey drizzle", "price": 7.50, "dietary": ["vegetarian"] }
+      ]
+    },
+    {
+      "id": "cat_003",
+      "name": "Lunch",
+      "description": "Served from 12:00pm onwards",
+      "items": [
+        { "id": "item_014", "name": "Soup of the Day", "description": "Homemade with brown bread", "price": 6.50, "dietary": ["vegetarian", "vegan-option"] },
+        { "id": "item_015", "name": "Chicken & Bacon Sandwich", "description": "Grilled chicken, crispy bacon, lettuce, tomato, mayo on ciabatta", "price": 9.50, "dietary": [] },
+        { "id": "item_016", "name": "Mediterranean Veggie Wrap", "description": "Grilled vegetables, hummus, feta, rocket", "price": 8.50, "dietary": ["vegetarian"] },
+        { "id": "item_017", "name": "Classic BLT", "description": "Bacon, lettuce, tomato, mayo on sourdough", "price": 8.00, "dietary": [] },
+        { "id": "item_018", "name": "Quiche of the Day", "description": "Served with mixed salad", "price": 9.50, "dietary": ["vegetarian"] },
+        { "id": "item_019", "name": "Cheese & Ham Toastie", "description": "Mature cheddar, honey roast ham, caramelized onion", "price": 7.50, "dietary": [] }
+      ]
+    },
+    {
+      "id": "cat_004",
+      "name": "Baked Goods",
+      "description": "Fresh from our kitchen daily",
+      "items": [
+        { "id": "item_020", "name": "Fruit Scone", "description": "With butter & jam", "price": 3.50, "dietary": ["vegetarian"] },
+        { "id": "item_021", "name": "Chocolate Brownie", "description": "Rich & fudgy", "price": 4.00, "dietary": ["vegetarian"] },
+        { "id": "item_022", "name": "Daily Muffin", "description": "Ask staff for today's flavor", "price": 3.80, "dietary": ["vegetarian"] },
+        { "id": "item_023", "name": "Carrot Cake", "description": "With cream cheese frosting", "price": 4.50, "dietary": ["vegetarian"] },
+        { "id": "item_024", "name": "Chocolate Chip Cookie", "description": "Chewy & delicious", "price": 3.00, "dietary": ["vegetarian"] }
+      ]
+    }
+  ],
+  "dietaryLegend": {
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "vegan-option": "Vegan Option Available",
+    "gluten-free": "Gluten Free",
+    "gluten-free-option": "Gluten Free Option Available"
+  }
+}

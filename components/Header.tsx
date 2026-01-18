@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Coffee, Menu, X, Phone, Mail } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import businessInfo from '@/app/data/business-info.json'
+import businessInfo from '@/data/business-info.json'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -63,7 +63,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href={`tel:${businessInfo.contact.phone}`}
+              href={`tel:${businessInfo.contact.primaryPhone}`}
               className="btn-secondary text-sm px-5 py-2.5"
             >
               <Phone className="w-4 h-4" />
@@ -108,11 +108,11 @@ export default function Header() {
               ))}
               <div className="pt-4 space-y-3">
                 <a
-                  href={`tel:${businessInfo.contact.phone}`}
+                  href={`tel:${businessInfo.contact.primaryPhone}`}
                   className="btn-secondary w-full justify-center"
                 >
                   <Phone className="w-4 h-4" />
-                  {businessInfo.contact.phone}
+                  {businessInfo.contact.primaryPhone}
                 </a>
                 <a
                   href={`mailto:${businessInfo.contact.email}`}

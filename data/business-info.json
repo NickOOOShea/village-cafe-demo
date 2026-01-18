@@ -1,0 +1,92 @@
+{
+  "name": "Village Cafe",
+  "tagline": "Artisan Coffee & Homemade Goodness Since 2015",
+  "type": "cafe",
+  "established": 2015,
+  "description": "A cozy neighborhood cafe serving specialty coffee, fresh pastries, and wholesome meals made with locally-sourced ingredients.",
+
+  "contact": {
+    "primaryPhone": "0989828765",
+    "email": "hello@villagecafe.ie",
+    "channels": [
+      { "id": "chan_001", "type": "facebook", "label": "Facebook", "url": "https://facebook.com/villagecafewestport" },
+      { "id": "chan_002", "type": "instagram", "label": "Instagram", "url": "https://instagram.com/villagecafe" }
+    ]
+  },
+
+  "location": {
+    "street": "47 Bridge Street",
+    "town": "Westport",
+    "county": "Mayo",
+    "eircode": "F28XT98",
+    "lat": 53.7998,
+    "lng": -9.5196
+  },
+
+  "directions": [
+    { "id": "dir_001", "text": "In the heart of Westport town, on Bridge Street opposite the clock tower" },
+    { "id": "dir_002", "text": "5 minute walk from Westport train station" }
+  ],
+
+  "parking": {
+    "available": true,
+    "notes": "Street parking on Bridge Street. Public car park on James Street (2 min walk)."
+  },
+
+  "hours": [
+    { "day": "monday", "open": "08:00", "close": "17:00", "closed": false },
+    { "day": "tuesday", "open": "08:00", "close": "17:00", "closed": false },
+    { "day": "wednesday", "open": "08:00", "close": "17:00", "closed": false },
+    { "day": "thursday", "open": "08:00", "close": "17:00", "closed": false },
+    { "day": "friday", "open": "08:00", "close": "18:00", "closed": false },
+    { "day": "saturday", "open": "09:00", "close": "18:00", "closed": false },
+    { "day": "sunday", "open": "10:00", "close": "17:00", "closed": false }
+  ],
+
+  "exceptions": [],
+
+  "payments": [
+    { "id": "pay_001", "type": "card", "label": "Card" },
+    { "id": "pay_002", "type": "cash", "label": "Cash" },
+    { "id": "pay_003", "type": "contactless", "label": "Contactless" }
+  ],
+
+  "accessibility": [
+    { "id": "acc_001", "type": "wheelchair_accessible", "label": "Wheelchair accessible", "value": true },
+    { "id": "acc_002", "type": "dog_friendly", "label": "Dog friendly", "value": true, "note": "Outdoor seating only" },
+    { "id": "acc_003", "type": "wifi", "label": "Free WiFi", "value": true },
+    { "id": "acc_004", "type": "outdoor_seating", "label": "Outdoor seating", "value": true }
+  ],
+
+  "social": [
+    { "id": "soc_001", "platform": "facebook", "url": "https://facebook.com/villagecafewestport" },
+    { "id": "soc_002", "platform": "instagram", "url": "https://instagram.com/villagecafe" }
+  ],
+
+  "features": [
+    { "id": "feat_001", "name": "Specialty Coffee", "icon": "coffee" },
+    { "id": "feat_002", "name": "Homemade Pastries", "icon": "croissant" },
+    { "id": "feat_003", "name": "Locally Sourced", "icon": "leaf" },
+    { "id": "feat_004", "name": "Vegetarian & Vegan Options", "icon": "salad" },
+    { "id": "feat_005", "name": "Free WiFi", "icon": "wifi" },
+    { "id": "feat_006", "name": "Outdoor Seating", "icon": "sun" }
+  ],
+
+  "story": {
+    "title": "Our Story",
+    "paragraphs": [
+      "Village Cafe opened its doors in 2015 with a simple mission: to create a warm, welcoming space where the community could gather over exceptional coffee and wholesome food.",
+      "What started as a small passion project has blossomed into Westport's favorite neighborhood cafe. We're proud to source our ingredients from local farmers and producers, supporting our community while serving you the freshest, most flavorful food possible.",
+      "Whether you're here for your morning coffee, a leisurely brunch, or an afternoon treat, we're committed to making every visit special. Thank you for being part of our story."
+    ],
+    "owner": "Sarah & Tom Murphy",
+    "ownerTitle": "Owners & Head Baristas"
+  },
+
+  "address": {
+    "street": "47 Bridge Street",
+    "town": "Westport",
+    "county": "Co. Mayo",
+    "eircode": "F28 XT98"
+  }
+}

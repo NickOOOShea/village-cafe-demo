@@ -4,7 +4,12 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import DemoAdminButton from '@/components/DemoAdminButton'
-import businessInfo from './data/business-info.json'
+import businessInfo from '@/data/business-info.json'
+
+const DAY_LABEL: Record<string, string> = {
+  monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday',
+  thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday'
+}
 
 const dmSerifDisplay = DM_Serif_Display({
   subsets: ['latin'],
@@ -53,7 +58,7 @@ const jsonLd = {
   name: businessInfo.name,
   description: businessInfo.description,
   url: 'https://village-cafe-demo.pages.dev',
-  telephone: businessInfo.contact.phone,
+  telephone: businessInfo.contact.primaryPhone,
   email: businessInfo.contact.email,
   address: {
     '@type': 'PostalAddress',
@@ -67,11 +72,11 @@ const jsonLd = {
     latitude: 53.8008,
     longitude: -9.5200,
   },
-  openingHoursSpecification: Object.entries(businessInfo.openingHours).map(([day, hours]) => ({
+  openingHoursSpecification: businessInfo.hours.filter(h => !h.closed).map((entry) => ({
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: day.charAt(0).toUpperCase() + day.slice(1),
-    opens: hours.open,
-    closes: hours.close,
+    dayOfWeek: DAY_LABEL[entry.day],
+    opens: entry.open,
+    closes: entry.close,
   })),
   servesCuisine: ['Coffee', 'Breakfast', 'Lunch', 'Bakery'],
   priceRange: '€€',

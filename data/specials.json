@@ -1,0 +1,39 @@
+{
+  "today": [
+    {
+      "id": "spec_001",
+      "category": "Breakfast",
+      "name": "Full Irish Lite",
+      "description": "A lighter version of our classic - bacon, sausage, eggs, grilled tomato, and toast",
+      "price": 10.00,
+      "dietary": []
+    },
+    {
+      "id": "spec_002",
+      "category": "Breakfast",
+      "name": "Mushroom & Thyme Scramble",
+      "description": "Creamy scrambled eggs with sauteed mushrooms and fresh thyme on sourdough toast",
+      "price": 8.00,
+      "dietary": ["vegetarian"]
+    }
+  ],
+  "weeklySpecials": [
+    { "id": "soup_001", "day": "monday", "special": "Mushroom & Thyme Soup" },
+    { "id": "soup_002", "day": "tuesday", "special": "Thai Curry Soup" },
+    { "id": "soup_003", "day": "wednesday", "special": "Leek & Potato Soup" },
+    { "id": "soup_004", "day": "thursday", "special": "Butternut Squash Soup" },
+    { "id": "soup_005", "day": "friday", "special": "Seafood Chowder" },
+    { "id": "soup_006", "day": "saturday", "special": "Chef's Special - Ask Inside" },
+    { "id": "soup_007", "day": "sunday", "special": "Roasted Vegetable Soup" }
+  ],
+  "seasonalHighlight": {
+    "title": "Autumn Menu",
+    "description": "Celebrating the season with pumpkin spice lattes, apple tarts, and hearty soups",
+    "items": [
+      { "id": "season_001", "name": "Pumpkin Spice Latte" },
+      { "id": "season_002", "name": "Spiced Apple Tart" },
+      { "id": "season_003", "name": "Butternut Squash Soup" },
+      { "id": "season_004", "name": "Caramel Apple Muffins" }
+    ]
+  }
+}

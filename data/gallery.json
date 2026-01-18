@@ -1,0 +1,20 @@
+{
+  "images": [
+    { "id": "img_001", "src": "/images/coffee/latte-art-1.webp", "alt": "Cafe latte with beautiful art", "category": "Coffee" },
+    { "id": "img_002", "src": "/images/coffee/latte-art-2.webp", "alt": "Latte art in blue mug", "category": "Coffee" },
+    { "id": "img_003", "src": "/images/coffee/latte-art-3.webp", "alt": "Heart latte art", "category": "Coffee" },
+    { "id": "img_004", "src": "/images/coffee/latte-art-4.webp", "alt": "Fresh espresso", "category": "Coffee" },
+    { "id": "img_005", "src": "/images/bakery/croissant-classic.webp", "alt": "Fresh baked croissants", "category": "Bakery" },
+    { "id": "img_006", "src": "/images/bakery/croissant-wooden.webp", "alt": "Croissant on wooden board", "category": "Bakery" },
+    { "id": "img_007", "src": "/images/bakery/chocolate-croissant.webp", "alt": "Chocolate croissant with strawberries", "category": "Bakery" },
+    { "id": "img_008", "src": "/images/bakery/pastries-variety.webp", "alt": "Variety of pastries", "category": "Bakery" },
+    { "id": "img_009", "src": "/images/bakery/bakery-display.webp", "alt": "Bakery display case", "category": "Bakery" },
+    { "id": "img_010", "src": "/images/bakery/bread-display.webp", "alt": "Fresh bread selection", "category": "Bakery" },
+    { "id": "img_011", "src": "/images/food/avocado-toast.webp", "alt": "Avocado toast", "category": "Brunch" },
+    { "id": "img_012", "src": "/images/food/breakfast-plate.webp", "alt": "Full breakfast plate", "category": "Brunch" },
+    { "id": "img_013", "src": "/images/food/poached-egg-sandwich.webp", "alt": "Poached egg sandwich", "category": "Brunch" },
+    { "id": "img_014", "src": "/images/food/tartine-halloumi.webp", "alt": "Halloumi tartine", "category": "Brunch" },
+    { "id": "img_015", "src": "/images/atmosphere/cafe-cozy.webp", "alt": "Cozy cafe interior", "category": "Atmosphere" },
+    { "id": "img_016", "src": "/images/atmosphere/cafe-interior.webp", "alt": "Cafe seating area", "category": "Atmosphere" }
+  ]
+}

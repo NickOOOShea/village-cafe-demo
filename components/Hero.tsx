@@ -3,18 +3,26 @@
 import { motion } from 'framer-motion'
 import { Coffee, MapPin, Clock, Phone, ChevronDown } from 'lucide-react'
 import Image from 'next/image'
-import businessInfo from '@/app/data/business-info.json'
+import businessInfo from '@/data/business-info.json'
+
 import { formatTime } from '@/lib/utils'
 
+const DAY_LABEL: Record<string, string> = {
+  monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday',
+  thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday'
+}
+const getFeatureNames = () => businessInfo.features.map(f => f.name)
+
 export default function Hero() {
-  const today = new Date().toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase() as keyof typeof businessInfo.openingHours
-  const todayHours = businessInfo.openingHours[today]
+  const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+  const todayKey = days[new Date().getDay()]
+  const todayHours = businessInfo.hours.find(h => h.day === todayKey) || businessInfo.hours[0]
 
   // Check if currently open
   const now = new Date()
   const currentTime = now.getHours() * 60 + now.getMinutes()
-  const [openHour, openMin] = todayHours.open.split(':').map(Number)
-  const [closeHour, closeMin] = todayHours.close.split(':').map(Number)
+  const [openHour, openMin] = (todayHours.closed ? '00:00' : todayHours.open).split(':').map(Number)
+  const [closeHour, closeMin] = (todayHours.closed ? '00:00' : todayHours.close).split(':').map(Number)
   const openTime = openHour * 60 + openMin
   const closeTime = closeHour * 60 + closeMin
   const isOpen = currentTime >= openTime && currentTime <= closeTime
@@ -109,7 +117,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8"
             >
-              {businessInfo.features.slice(0, 3).map((feature) => (
+              {getFeatureNames().slice(0, 3).map((feature) => (
                 <span
                   key={feature}
                   className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold text-sage-700 border border-sage-200 shadow-warm"
@@ -134,7 +142,7 @@ export default function Hero() {
                 <Coffee className="w-5 h-5 group-hover:rotate-12 transition-transform" />
               </a>
               <a
-                href={`tel:${businessInfo.contact.phone}`}
+                href={`tel:${businessInfo.contact.primaryPhone}`}
                 className="btn-outline group"
               >
                 <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
